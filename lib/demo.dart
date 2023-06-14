@@ -23,42 +23,66 @@ class _DemoState extends State<Demo> {
         ),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            ElevatedButton(
+        child: Expanded(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return DisplayTime();
+                    }));
+                  },
+                  child: const Text(
+                    'Displaying Time',
+                    style: TextStyle(fontSize: 25),
+                  )),
+              const SizedBox(
+                height: 8,
+              ),
+              ElevatedButton(
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return DisplayTime();
+                    return Localize();
                   }));
                 },
-                child: const Text('Displaying Time')),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return Localize();
-                }));
-              },
-              child: const Text('Localizing Dates in Flutter'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return Formatting();
-                }));
-              },
-              child: const Text('Formatting Date Ranges'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return TimeZones();
-                }));
-              },
-              child: const Text('Handling Time Zones'),
-            ),
-          ],
+                child: const Text(
+                  'Localizing Dates in Flutter',
+                  style: TextStyle(fontSize: 25),
+                ),
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return Formatting();
+                  }));
+                },
+                child: const Text(
+                  'Formatting Date Ranges',
+                  style: TextStyle(fontSize: 25),
+                ),
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return TimeZones();
+                  }));
+                },
+                child: const Text(
+                  'Handling Time Zones',
+                  style: TextStyle(fontSize: 25),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
